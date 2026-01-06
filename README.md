@@ -1,8 +1,7 @@
-# YouTube Notemake v0.2.0
+# YouTube Notemaker v0.2.0
 
 Extract transcripts from YouTube videos with AI-powered features, multiple export formats, and intelligent caching!
-
-**Version 0.2.0** - Major update with AI summarization, advanced text processing, PDF/JSON export, and batch processing.
+with AI summarization, advanced text processing, PDF/JSON export, and batch processing.
 
 ## 🌟 Key Features
 
@@ -90,7 +89,7 @@ uv run streamlit run app.py
 4. **Generate** and download
 
 ### With AI Features
-1. Add API key to `.env` file (see [API_SETUP.md](API_SETUP.md))
+1. Add API key to `.env` file
 2. Enable AI features in the UI
 3. Choose summary length and key points
 4. Optionally add questions and sentiment analysis
@@ -148,9 +147,6 @@ run.bat       # Windows
 ## 📝 Documentation
 
 - **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
-- **[API_SETUP.md](API_SETUP.md)** - How to set up API keys for AI features
-- **[FEATURES_V2.md](FEATURES_V2.md)** - Complete feature list and usage
-- **[AUDIO_TRANSCRIPTION_GUIDE.md](AUDIO_TRANSCRIPTION_GUIDE.md)** - Audio transcription details
 - **[PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md)** - Architecture and design
 
 ## 💡 Usage Tips
@@ -170,7 +166,7 @@ All features work except AI summarization:
 - ✅ Discussion questions
 - ✅ Sentiment analysis
 
-**Cost**: ~$0.01-0.05 per 10-minute video (Claude is cheaper than GPT-4)
+**Cost**: ~$0.01-0.05 per 10-minute video
 
 ## 🎯 Use Cases
 
@@ -258,19 +254,13 @@ YouTube-Notemake/
 - GPT-4 Turbo: ~$0.01-0.05 per video
 - Processing time: 5-15 seconds
 
-## 🤝 Contributing
 
-Contributions welcome! Feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
-- Improve documentation
 
 ## 📄 License
 
 MIT License - Free to use, modify, and distribute
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - OpenAI Whisper for speech-to-text
 - yt-dlp for video handling
@@ -278,7 +268,3 @@ MIT License - Free to use, modify, and distribute
 - Anthropic & OpenAI for AI capabilities
 
 ---
-
-**Made with ❤️ for better learning and accessibility**
-
-Version 0.2.0 | [Changelog](FEATURES_V2.md) | [Quick Start](QUICKSTART.md) | [API Setup](API_SETUP.md)
