@@ -1,4 +1,4 @@
-# YouTube Notemaker v0.2.0
+# YouTube Notemaker 
 
 Extract transcripts from YouTube videos with AI-powered features, multiple export formats, and intelligent caching!
 with AI summarization, advanced text processing, PDF/JSON export, and batch processing.
@@ -104,9 +104,6 @@ uv run streamlit run app.py
 run.bat       # Windows
 ```
 
-## 📊 What's New in v0.2.0
-
-### Major Features Added
 ✨ **AI-Powered Summarization**
 - Claude (Sonnet 3.5) and GPT-4 support
 - Customizable summary length
