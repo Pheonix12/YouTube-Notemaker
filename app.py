@@ -65,6 +65,15 @@ def main():
             st.success(f"Deleted {deleted} files")
             st.rerun()
 
+        # YouTube Auth status
+        st.subheader("🍪 YouTube Auth")
+        from src.youtube_notemake.ytdlp_config import _resolve_cookie_path
+        cookie_file = os.getenv("YT_DLP_COOKIE_FILE", "")
+        if cookie_file and _resolve_cookie_path(cookie_file):
+            st.success("✅ Cookie file configured")
+        else:
+            st.info("Set YT_DLP_COOKIE_FILE in .env if you get 403 errors")
+
     # Main content
     st.header("1️⃣ Enter YouTube URL")
     url = st.text_input(
@@ -102,7 +111,7 @@ def main():
 
         with col1:
             if video_info.get('thumbnail'):
-                st.image(video_info['thumbnail'], use_container_width=True)
+                st.image(video_info['thumbnail'], width='stretch')
 
         with col2:
             st.markdown(f"**Title:** {video_info['title']}")

@@ -6,6 +6,7 @@ from typing import List, Dict, Optional
 import yt_dlp
 import whisper
 from pathlib import Path
+from .ytdlp_config import get_base_ydl_opts
 
 
 class AudioTranscriber:
@@ -48,17 +49,17 @@ class AudioTranscriber:
             temp_dir = tempfile.gettempdir()
             output_path = os.path.join(temp_dir, "youtube_audio.%(ext)s")
 
-        ydl_opts = {
-            'format': 'bestaudio/best',
-            'outtmpl': output_path,
-            'postprocessors': [{
+        ydl_opts = get_base_ydl_opts(
+            format='bestaudio/bestaudio*/best',
+            outtmpl=output_path,
+            postprocessors=[{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
                 'preferredquality': '192',
             }],
-            'quiet': True,
-            'no_warnings': True,
-        }
+            quiet=True,
+            no_warnings=True,
+        )
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:

@@ -4,6 +4,7 @@ import re
 from typing import List, Dict, Optional, Callable
 import yt_dlp
 from .youtube_handler import YouTubeHandler
+from .ytdlp_config import get_base_ydl_opts
 
 
 class BatchProcessor:
@@ -42,12 +43,12 @@ class BatchProcessor:
         Returns:
             List of dicts with 'video_id', 'title', 'url'
         """
-        ydl_opts = {
-            'quiet': True,
-            'no_warnings': True,
-            'extract_flat': True,  # Don't download, just get info
-            'force_generic_extractor': False,
-        }
+        ydl_opts = get_base_ydl_opts(
+            quiet=True,
+            no_warnings=True,
+            extract_flat=True,
+            force_generic_extractor=False,
+        )
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -87,12 +88,12 @@ class BatchProcessor:
         Returns:
             List of dicts with 'video_id', 'title', 'url'
         """
-        ydl_opts = {
-            'quiet': True,
-            'no_warnings': True,
-            'extract_flat': True,
-            'playlistend': max_videos,
-        }
+        ydl_opts = get_base_ydl_opts(
+            quiet=True,
+            no_warnings=True,
+            extract_flat=True,
+            playlistend=max_videos,
+        )
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:

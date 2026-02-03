@@ -4,6 +4,7 @@ import re
 from typing import Optional, Dict, Any
 from datetime import datetime
 import yt_dlp
+from .ytdlp_config import get_base_ydl_opts
 
 
 class YouTubeHandler:
@@ -55,11 +56,11 @@ class YouTubeHandler:
         - like_count: Number of likes
         - comment_count: Number of comments
         """
-        ydl_opts = {
-            'quiet': True,
-            'no_warnings': True,
-            'extract_flat': False,
-        }
+        ydl_opts = get_base_ydl_opts(
+            quiet=True,
+            no_warnings=True,
+            extract_flat=False,
+        )
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
